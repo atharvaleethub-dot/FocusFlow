@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta
+      name="description"
+      content="FocusFlow - an adaptive study planner that builds a realistic weekly schedule and reschedules unfinished work."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FocusFlow - Adaptive Study Planner" />
+    <meta
+      property="og:description"
+      content="Organize study tasks into a realistic weekly schedule and rearrange unfinished sessions when plans change."
+    />
+    <script>
+      try {
+        if (localStorage.getItem('focusflow:theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        /* storage unavailable */
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>FocusFlow - Adaptive Study Planner</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

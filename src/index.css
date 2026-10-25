@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 font-sans text-slate-900 antialiased;
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white;
+  }
+
+  .dark :focus-visible {
+    @apply ring-offset-slate-950;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Light-theme contrast: slate-400 on white is below the WCAG AA ratio, so it is darkened
+   in the light theme only. The dark theme keeps its lighter text. */
+html:not(.dark) .text-slate-400 {
+  color: rgb(100 116 139);
+}
+
+html:not(.dark) ::placeholder {
+  color: rgb(100 116 139);
+}
+
+/* Very long unbroken words (for example in task titles) wrap instead of overflowing. */
+#main-content {
+  overflow-wrap: anywhere;
+}
